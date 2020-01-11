@@ -15,7 +15,8 @@ public class UserEndpoint extends AuthenticatedEndpoint {
 
     @ApiMethod(path = "me", httpMethod = GET)
     public AppUser getCurrentUser(User user) throws ServiceException {
-        return wrap(user, appUser -> AppUser.create(user));
+        log.info("User email {} called the api", user.getEmail());
+        return wrap(user, googleUser -> AppUser.create(user));
     }
 
 }
