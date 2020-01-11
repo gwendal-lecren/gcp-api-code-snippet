@@ -16,19 +16,17 @@ The goal of this repo is to play with the different products/services of the GCP
     gcloud init
     gcloud auth application-default login
 
-## Maven
-
 ## Compile
 * locally:
     `mvn clean package`
 * dev:
     `mvn clean package -P dev`
     
-### Running locally
+## Running locally
 
     mvn appengine:run in folder core for the core module (will be deployed on localhost:8080)
 
-### Deploying
+## Deploying
 
     mvn package appengine:deploy -P dev
 
@@ -40,7 +38,7 @@ to (`src/main/test/...`).  The following resources are quite useful:
 * [Junit4](http://junit.org/junit4/)
 * [Mockito](http://mockito.org/)
 
-# Browse API
+## Browse API
 * locally
     * http://localhost:8080/_ah/api/explorer (see troubleshooting section)
 * dev
@@ -55,7 +53,7 @@ to (`src/main/test/...`).  The following resources are quite useful:
 ## Endpoints
 Regenerate and redeploy the OpenAPI configuration the first time, and whenever the configuration details in the @Api annotation is modified.
 
-### Regenerate the OpenAPI configuration
+## Regenerate the OpenAPI configuration
 The file `target/generated-sources/openapi.json` will be created.
 First move to the maven core module: `cd core`
 * locally
@@ -63,7 +61,7 @@ First move to the maven core module: `cd core`
 * dev
     * `mvn endpoints-framework:openApiDocs -P dev`
 
-### Deploy the OpenAPI configuration
+## Deploy the OpenAPI configuration
 It gives access to the Endpoints dashboard on Google Cloud Platform.
 /!\ Needs the billing activated.
 First move to the maven core module: `cd core`
